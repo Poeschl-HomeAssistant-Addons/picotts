@@ -7,10 +7,3 @@ updates:
     groups:
       GH actions:
         dependency-type: production
-  - package-ecosystem: "pip"
-    directory: "picotts/wrapper"
-    schedule:
-      interval: "monthly"
-    groups:
-      Wrapper packages:
-        dependency-type: production
