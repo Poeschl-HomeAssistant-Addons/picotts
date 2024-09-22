@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS BUILD
 
 RUN apk update && \
     apk add --no-cache \
-		git=2.36.2-r0 \
+		git=2.36.6-r0 \
 		build-base=0.5-r3 \
 		autoconf=2.71-r0 \
 		libtool=2.4.7-r0 \
@@ -20,8 +20,8 @@ RUN git config --global advice.detachedHead false && \
 FROM $BUILD_FROM AS RUNNING
 
 RUN apk add --no-cache \
-			'python3=3.10.5-r0' \
-			'popt=1.18-r0' && \
+			python3=3.10.14-r1 \
+			popt=1.18-r0 && \
 	python3 -m ensurepip
 
 COPY --from=BUILD /usr/local/bin/pico2wave /usr/local/bin/pico2wave
